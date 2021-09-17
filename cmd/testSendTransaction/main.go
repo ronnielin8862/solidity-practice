@@ -35,6 +35,10 @@ func main(){
 
 	fmt.Println("from addr = " , fromAddress)
 
+
+	//toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
+	to := accounts.Account{Address: common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")}
+
 	nonce, err := client.PendingNonceAt(context.Background(), fromAddress)
 	if err != nil {
 		log.Fatal(err)
@@ -49,12 +53,7 @@ func main(){
 		log.Fatal(err)
 	}
 
-	//toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
-	to := accounts.Account{Address: common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")}
-
-
-
-	data:= []byte("ED ~ 好棒棒耶 ~")
+	data:= []byte(" ~ 好棒棒耶 ~")
 
 	//tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, nil)
 	tx := types.NewTx(&types.LegacyTx{
