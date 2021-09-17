@@ -4,6 +4,7 @@ import (
 	"context"
 	"crypto/ecdsa"
 	"fmt"
+	"github.com/ethereum/go-ethereum/accounts"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
@@ -41,16 +42,30 @@ func main(){
 
 	value := big.NewInt(1000000000000000) // in wei (1 eth)
 
-	gasLimit := uint64(21000) // in units
+	gasLimit := uint64(210000) // in units
 	//gasPrice := big.NewInt(30000000000) // in wei (30 gwei)
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
+	//toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
+	to := accounts.Account{Address: common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")}
 
-	tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, nil)
+
+
+	data:= []byte("ED ~ 好棒棒耶 ~")
+
+	//tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, nil)
+	tx := types.NewTx(&types.LegacyTx{
+		Nonce:    nonce,
+		To:       &to.Address,
+		Value:    value,
+		Gas:      gasLimit,
+		GasPrice: gasPrice,
+		Data:     data,
+	})
+
 
 	chainID, err := client.NetworkID(context.Background())
 	if err != nil {
