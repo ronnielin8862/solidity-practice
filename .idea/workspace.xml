@@ -5,31 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f33faa5e-3bdb-422a-9e12-cfadf1d8ee8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/btc/Sign/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/btc/genPrivateKey/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/btc/genPrivateKey2/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/checkAddressValidaty/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/generateKeyAndAddress/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/getBalance/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blockChain/pkg/blockChain/checkEthAddressValidaty.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blockChain/pkg/blockChain/weiToEthereum.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blockChain/pkg/btc/genPrivateKey/getPrivateKey.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/solidity-practice.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/testGetAndPut/getTest/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/getTest/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/testGetAndPut/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/testGetAndPut/setTest/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/setTest/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/testSendTransaction/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testSendTransaction/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/getTest/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/get/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/deploy/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/setTest/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/set/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testSendTransaction/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/sendTransaction/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blockChain/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/solidity/testGetAndPut/testGetAndPut.abi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/solidity/testGetAndPut/testGetAndPut.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/solidity/testGetAndPut/testGetAndPut.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/solidity/testGetAndPut/testGetAndPut.sol" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +57,11 @@
       <recent name="$PROJECT_DIR$/cmd" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../blockChain/cmd/eth/solidity" />
+      <recent name="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/deploy" />
+      <recent name="$PROJECT_DIR$/../blockChain/cmd/eth" />
       <recent name="$PROJECT_DIR$/cmd/eth/solidity" />
       <recent name="$PROJECT_DIR$/cmd/eth" />
-      <recent name="$PROJECT_DIR$/pkg/blockChain" />
     </key>
   </component>
   <component name="RunManager">
@@ -91,6 +74,15 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="go build solidity2/cmd/eth/solidity/deploy" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="blockChain" />
+      <working_directory value="$PROJECT_DIR$/../blockChain" />
+      <kind value="PACKAGE" />
+      <package value="solidity2/cmd/eth/solidity/deploy" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/deploy/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="blockChain" />
       <working_directory value="$PROJECT_DIR$" />
@@ -101,6 +93,11 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build solidity2/cmd/eth/solidity/deploy" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">

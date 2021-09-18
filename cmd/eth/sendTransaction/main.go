@@ -65,7 +65,6 @@ func main(){
 		Data:     data,
 	})
 
-
 	chainID, err := client.NetworkID(context.Background())
 	if err != nil {
 		log.Fatal(err)

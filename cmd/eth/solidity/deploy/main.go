@@ -41,7 +41,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	auth := bind.NewKeyedTransactor(privateKey)
+	//auth := bind.NewKeyedTransactor(privateKey)  改用下面新的api
+	auth, _ := bind.NewKeyedTransactorWithChainID(privateKey, big.NewInt(3))
 	auth.Nonce = big.NewInt(int64(nonce))
 	auth.Value = big.NewInt(0)     // in wei
 	auth.GasLimit = uint64(300000) // in units
