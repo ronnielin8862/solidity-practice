@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f33faa5e-3bdb-422a-9e12-cfadf1d8ee8a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/btc/Sign/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/btc/genPrivateKey/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/btc/genPrivateKey2/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/checkAddressValidaty/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/generateKeyAndAddress/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/getBalance/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blockChain/pkg/blockChain/checkEthAddressValidaty.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blockChain/pkg/blockChain/weiToEthereum.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blockChain/pkg/btc/genPrivateKey/getPrivateKey.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/solidity-practice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/testGetAndPut/getTest/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/getTest/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/testGetAndPut/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/testGetAndPut/setTest/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/setTest/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/testSendTransaction/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testSendTransaction/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/solidity/testGetAndPut/testGetAndPut.abi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/solidity/testGetAndPut/testGetAndPut.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/solidity/testGetAndPut/testGetAndPut.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blockChain/solidity/testGetAndPut/testGetAndPut.sol" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../blockChain" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1yIri4avXT3yBn8PIatjW5fhtCS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pkg/blockChain" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/blockChain" />
+      <recent name="$PROJECT_DIR$/pkg" />
+      <recent name="$PROJECT_DIR$/cmd" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmd/eth/solidity" />
+      <recent name="$PROJECT_DIR$/cmd/eth" />
+      <recent name="$PROJECT_DIR$/pkg/blockChain" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="blockChain" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="solidity2" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="blockChain" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <package value="solidity2" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

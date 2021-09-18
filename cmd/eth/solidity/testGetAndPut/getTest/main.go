@@ -6,7 +6,7 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"log"
 
-	"solidity2/solidity/testGetAndPut"
+	"solidity2/solidityRawData/testGetAndPut"
 )
 
 func main() {

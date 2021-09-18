@@ -4,15 +4,13 @@ import (
 	"context"
 	"crypto/ecdsa"
 	"fmt"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/ethclient"
 	"log"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/ethclient"
-
-	"solidity2/solidity/testGetAndPut"
+	"solidity2/solidityRawData/testGetAndPut"
 )
 
 func main() {
@@ -45,29 +43,19 @@ func main() {
 
 	auth := bind.NewKeyedTransactor(privateKey)
 	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(0)      // in wei
-	auth.GasLimit = uint64(3000000) // in units
+	auth.Value = big.NewInt(0)     // in wei
+	auth.GasLimit = uint64(300000) // in units
 	auth.GasPrice = gasPrice
 
-	address := common.HexToAddress("0xe0Cf5653598BA9B2eF83299f7F62abbE8E2A5E3a")
-	instance, err := testGetAndPut.NewTestGetAndPut(address, client)
+	//input := "1.0"
+	//address, tx, instance, err := testGetAndPut.DeployTestGetAndPut(auth, client, input)
+	address, tx, instance, err := testGetAndPut.DeployTestGetAndPut(auth, client)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tx, err := instance.Store(auth, big.NewInt(333))
-	if err != nil {
-		log.Fatal(err)
-	}
+	fmt.Println("address = ", address.Hex())
+	fmt.Println("tx = ", tx.Hash().Hex())
 
-	fmt.Println("tx :", tx)
-	fmt.Println("tx sent: ", tx.Hash().Hex())
-
-	result, err := instance.Retrieve(nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println("result :",result )
-
+	_ = instance
 }
