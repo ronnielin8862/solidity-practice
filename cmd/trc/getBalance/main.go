@@ -38,7 +38,8 @@ func getBalanceFromHttp(){
 	httpClient.GetBalance(samAcc, "00000000020e931413765b06f89f534484721d9ffb273413c58e84fad8f91ab5" , "31981230")
 }
 
-//https://github.com/JFJun/trx-sign-go/blob/master/test/tx_test.go 不可用
+//不可用
+//https://github.com/JFJun/trx-sign-go/blob/master/test/tx_test.go
 func getBalance1() {
 	c, err := grpcs.NewClient("52.53.189.99:50051")
 	if err != nil {

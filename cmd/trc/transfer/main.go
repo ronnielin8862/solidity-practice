@@ -4,53 +4,139 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
+	"google.golang.org/grpc"
 	"google.golang.org/protobuf/proto"
 
-	//"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/fbsobreira/gotron-sdk/pkg/client"
 	tronCommon "github.com/fbsobreira/gotron-sdk/pkg/common"
 	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
 	"github.com/shopspring/decimal"
-	//"github.com/fbsobreira/gotron-sdk/pkg/common"
-	//"google.golang.org/grpc"
+
 )
 
 var (
 	myAcc = "TUPnueXTxPWto2bRTevxmMfnupNfzri7M7"
+	myAcc1 = "TAAgudMidPhriddmEDJEmVrS5UJyWA75gg"
 	samAcc= "TFU3d1TKMvmXcAHyRGfVToyfNtAfdUmH5g"
 	tronClient *client.GrpcClient
 )
 
+// CreateChainTransaction 创建交易对象
+type CreateChainTransaction struct {
+	From         string `form:"from" json:"from" binding:"required"`
+	To           string `form:"to" json:"to" binding:"required"`
+	Amount       string `form:"amount" json:"amount" binding:"required"`
+	ContractAddr string `form:"contract_addr" json:"contract_addr"`
+	FeeLimit     int64  `form:"fee_limit" json:"fee_limit"`
+}
+
+// BroadcastTronTx 广播交易
+type BroadcastTronTx struct {
+	TxID       string   `form:"txID" json:"txID"`
+	RawDataHex string   `form:"raw_data_hex" json:"raw_data_hex" binding:"required"`
+	Signature  []string `form:"signature" json:"signature" binding:"required"`
+}
+
 
 func main(){
+	connectTronNode()
 	transfer()
 }
 
+//先創建交易
+//再廣播交易
 func transfer(){
-
 	privateKey := "86540d31f37a88994e7fde229ba82657dd6369ff4f098d9129819afc94051ad0"
-
-	amount , _ := decimal.NewFromString("50")
 
 	feeLimit := decimal.New(40, tronCommon.AmountDecimalPoint).IntPart()
 
-	tronTx, err := CreateTronTx(myAcc, samAcc, "", amount, feeLimit)
-
-	if err != nil {
-		panic("创建转账交易")
+	param := &CreateChainTransaction{
+		From: myAcc1, To: samAcc, Amount: "1", ContractAddr: "", FeeLimit: feeLimit,
 	}
 
-	rawData, err := proto.Marshal(tronTx.GetTransaction().GetRawData())
+	rawData, err := CreateTronTransaction(param)
+	if err != nil {
+		panic("CreateTronTransaction err")
+	}
 
-	RawDataHex := hex.EncodeToString(rawData)
+	signature, question := signTronTx(rawData[:], privateKey)
 
-	signTronTx(RawDataHex, privateKey)
+	param3 := &BroadcastTronTx{
+		RawDataHex: rawData,  Signature: signature, TxID: question,
+	}
+
+	BroadcastTronTransaction(param3)
 
 }
 
-func signTronTx(rawDataHex string, privateKeyHex string ){
+func connectTronNode() {
+	tronNodeUrl := "52.53.189.99:50051"
+	tronClient = client.NewGrpcClient(tronNodeUrl)
+	if err := tronClient.Start(grpc.WithInsecure()); err != nil {
+		panic("与tron节点建立连接")
+	}
+}
+
+func CreateTronTransaction(param *CreateChainTransaction) (string, error){
+	amount, err := decimal.NewFromString(param.Amount)
+	if err != nil {
+		panic("参数错误")
+	}
+	feeLimit := param.FeeLimit
+	if feeLimit == 0 {
+		// 默认40trx
+		feeLimit = decimal.New(40, 6).IntPart()
+	}
+	tronTx, err := CreateTronTx(param.From, param.To, param.ContractAddr, amount, feeLimit)
+	if err != nil {
+		panic("创建交易")
+	}
+	rawData, err := proto.Marshal(tronTx.GetTransaction().GetRawData())
+	if err != nil {
+		panic("序列化交易")
+	}
+	rawDataHex := hex.EncodeToString(rawData)
+	fmt.Println("RawDataHex: " + hex.EncodeToString(rawData))
+
+	return rawDataHex, err
+}
+
+
+func BroadcastTronTransaction(param *BroadcastTronTx) {
+
+	rawDataBytes, err := hex.DecodeString(param.RawDataHex)
+	if err != nil {
+		panic("解码交易数据")
+	}
+	var transaction = &core.TransactionRaw{}
+	if err = proto.Unmarshal(rawDataBytes, transaction); err != nil {
+		panic("解码交易数据，转换proto对象")
+	}
+	var signature [][]byte
+	for _, s := range param.Signature {
+		signBytes, _ := hex.DecodeString(s)
+		signature = append(signature, signBytes)
+	}
+	tx := &core.Transaction{
+		RawData:   transaction,
+		Signature: signature,
+	}
+
+	h256h := sha256.New()
+	h256h.Write(rawDataBytes)
+	hash := h256h.Sum(nil)
+	txId := common.Bytes2Hex(hash)
+	chainTransaction, err := tronClient.Broadcast(tx)
+	if err != nil || chainTransaction.GetCode() != api.Return_SUCCESS {
+		panic("广播交易，code=%d  ")
+	}
+	fmt.Println("交易完成 ：" + txId)
+}
+
+func signTronTx(rawDataHex string, privateKeyHex string ) (sig []string, question string){
 	privateKey, err := crypto.HexToECDSA(privateKeyHex)
 	if err != nil {
 		panic(err)
@@ -69,7 +155,8 @@ func signTronTx(rawDataHex string, privateKeyHex string ){
 	}
 
 	sigStr := hex.EncodeToString(signature)
-	panic("签名字符串"+ sigStr)
+	fmt.Println("签名字符串"+ sigStr)
+
 	transaction := &core.TransactionRaw{}
 	if err = proto.Unmarshal(rawDataBytes, transaction); err != nil {
 		panic(err)
@@ -77,10 +164,12 @@ func signTronTx(rawDataHex string, privateKeyHex string ){
 	}
 	tx := &core.Transaction{RawData: transaction, Signature: [][]byte{signature}}
 	marshal, err := proto.Marshal(tx)
-	if err != nil {
-		panic(err)
-	}
-	panic("签名后的交易"+ hex.EncodeToString(marshal))
+	question = hex.EncodeToString(marshal)
+
+	sigStr2StringArray := []string {sigStr[:]}
+
+	fmt.Println("签名后的交易",question)
+	return sigStr2StringArray, question
 }
 
 // CreateTronTx 创建交易
@@ -97,8 +186,7 @@ func CreateTronTx(from, to, contract string, amount decimal.Decimal, feeLimit in
 	}
 	decimals, err := tronClient.TRC20GetDecimals(contract)
 	if err != nil {
-		fmt.Println("查询%s小数位", contract)
-		return nil, err
+		panic("查询%s小数位"+contract)
 	}
 	// trc20代币数量乘以小数位
 	transferNum := amount.Mul(decimal.New(1, int32(decimals.Int64()))).BigInt()
@@ -109,58 +197,3 @@ func CreateTronTx(from, to, contract string, amount decimal.Decimal, feeLimit in
 	}
 	return transactionExt, nil
 }
-
-//func tronClient() {
-//		url := "52.53.189.99:50051"
-//		c := client.NewGrpcClient(url)
-//		if err := c.Start(grpc.WithInsecure()); err != nil || c == nil{
-//			panic("建立連結失敗 : "+ url)
-//		}
-//}
-
-//func transfer(){
-//	url := "52.53.189.99:50051"
-//	c := client.NewGrpcClient(url)
-//	if err := c.Start(grpc.WithInsecure()); err != nil || c == nil{
-//		panic("建立連結失敗 : "+ url)
-//	}
-//
-//	tx, err := c.Transfer(myAcc,samAcc,20)
-//	if err != nil {
-//		fmt.Println(111)
-//	}
-//	signTx, err := sign.SignTransaction(tx.Transaction, "86540d31f37a88994e7fde229ba82657dd6369ff4f098d9129819afc94051ad0")
-//	if err != nil {
-//		fmt.Println(222)
-//	}
-//	result , err := c.Broadcast(signTx)
-//	if err != nil {
-//		fmt.Println(333)
-//	}
-//	fmt.Println(common.BytesToHexString(tx.GetTxid()))
-//	fmt.Println("result = " ,result)
-//}
-//
-//func Test_TransferTrx(t *testing.T) {
-//	c, err := grpcs.NewClient("54.168.218.95:50051")
-//	if err != nil {
-//		t.Fatal(err)
-//	}
-//	tx, err := c.Transfer("TFTGMfp7hvDtt4fj3vmWnbYsPSmw5EU8oX", "TVwt3HTg6PjP5bbb5x1GtSvTe1J5FYM2BT", 10000)
-//	if err != nil {
-//		fmt.Println(111)
-//		t.Fatal(err)
-//	}
-//	signTx, err := sign.SignTransaction(tx.Transaction, "")
-//	if err != nil {
-//		fmt.Println(222)
-//		t.Fatal(err)
-//	}
-//	err = c.BroadcastTransaction(signTx)
-//	if err != nil {
-//		fmt.Println(333)
-//		t.Fatal(err)
-//	}
-//	fmt.Println(common.BytesToHexString(tx.GetTxid()))
-//
-//}
