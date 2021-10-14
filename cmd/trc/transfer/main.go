@@ -21,6 +21,7 @@ var (
 	myAcc = "TUPnueXTxPWto2bRTevxmMfnupNfzri7M7"
 	myAcc1 = "TAAgudMidPhriddmEDJEmVrS5UJyWA75gg"
 	samAcc= "TFU3d1TKMvmXcAHyRGfVToyfNtAfdUmH5g"
+	generateAcc= "TEJAKcwkUPE1NNMkQ8BoWjcgsWsPJbaCnF"
 	tronClient *client.GrpcClient
 )
 
@@ -54,7 +55,7 @@ func transfer(){
 	feeLimit := decimal.New(40, tronCommon.AmountDecimalPoint).IntPart()
 
 	param := &CreateChainTransaction{
-		From: myAcc1, To: samAcc, Amount: "1", ContractAddr: "", FeeLimit: feeLimit,
+		From: myAcc1, To: generateAcc, Amount: "1", ContractAddr: "", FeeLimit: feeLimit,
 	}
 
 	rawData, err := CreateTronTransaction(param)

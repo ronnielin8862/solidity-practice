@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="299503a6-3f4a-4500-83ed-0df55a85c9b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cmd/trc/genetateKeyAdnAddress/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/trc/getBalance/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/trc/getBalance/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/trc/transfer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/trc/transfer/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +70,15 @@
       <filePath value="$PROJECT_DIR$/cmd/btc/getBalance/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go build solidity2/cmd/trc/genetateKeyAdnAddress" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="blockChain" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="solidity2/cmd/trc/genetateKeyAdnAddress" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/trc/genetateKeyAdnAddress/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build solidity2/cmd/trc/getBalance" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="blockChain" />
       <working_directory value="$PROJECT_DIR$" />
@@ -100,6 +109,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build solidity2/cmd/trc/transfer" />
+        <item itemvalue="Go Build.go build solidity2/cmd/trc/genetateKeyAdnAddress" />
         <item itemvalue="Go Build.go build solidity2/cmd/trc/getBalance" />
         <item itemvalue="Go Build.go build solidity2/cmd/trc/test" />
         <item itemvalue="Go Build.go build solidity2/cmd/btc/getBalance" />
