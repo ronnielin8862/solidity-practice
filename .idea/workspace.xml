@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="299503a6-3f4a-4500-83ed-0df55a85c9b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/btc/getBalance/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/trc/getBalance/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/trc/transfer/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/trx/httpClient/getBalance.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/blockChain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blockChain.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-    </list>
+    <list default="true" id="299503a6-3f4a-4500-83ed-0df55a85c9b6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
