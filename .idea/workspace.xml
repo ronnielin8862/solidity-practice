@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f33faa5e-3bdb-422a-9e12-cfadf1d8ee8a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../blockChain/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/getTest/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/get/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/deploy/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/setTest/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/set/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testSendTransaction/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/cmd/eth/sendTransaction/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blockChain/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../blockChain/go.sum" afterDir="false" />
+    <list default="true" id="299503a6-3f4a-4500-83ed-0df55a85c9b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cmd/btc/getBalance/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/trc/getBalance/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/trc/transfer/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/trx/httpClient/getBalance.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blockChain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blockChain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,13 +29,22 @@
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../blockChain" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
-  <component name="ProjectId" id="1yIri4avXT3yBn8PIatjW5fhtCS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/client/client.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/cmd/trc/getBalance/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/cmd/btc/getBalance/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/common/base58.go" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/local/go/src/runtime/proc.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/cmd/eth/sendTransaction/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/go/pkg/mod/github.com/!j!f!jun/trx-sign-go@v1.0.3/grpcs/grpc.go" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/local/go/src/runtime/panic.go" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1zFmtEtnu6O6Hab3OC31e1nkrxV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,55 +59,56 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pkg/blockChain" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pkg/blockChain" />
-      <recent name="$PROJECT_DIR$/pkg" />
-      <recent name="$PROJECT_DIR$/cmd" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../blockChain/cmd/eth/solidity" />
-      <recent name="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/testGetAndPut/deploy" />
-      <recent name="$PROJECT_DIR$/../blockChain/cmd/eth" />
-      <recent name="$PROJECT_DIR$/cmd/eth/solidity" />
-      <recent name="$PROJECT_DIR$/cmd/eth" />
+      <recent name="$PROJECT_DIR$/pkg/trx" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+  <component name="RunManager" selected="Go Build.go build solidity2/cmd/trc/getBalance">
+    <configuration name="go build solidity2/cmd/btc/getBalance" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="blockChain" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="solidity2" />
+      <package value="solidity2/cmd/btc/getBalance" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/btc/getBalance/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build solidity2/cmd/eth/solidity/deploy" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="blockChain" />
-      <working_directory value="$PROJECT_DIR$/../blockChain" />
-      <kind value="PACKAGE" />
-      <package value="solidity2/cmd/eth/solidity/deploy" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/../blockChain/cmd/eth/solidity/deploy/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+    <configuration name="go build solidity2/cmd/trc/getBalance" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="blockChain" />
       <working_directory value="$PROJECT_DIR$" />
-      <kind value="DIRECTORY" />
-      <package value="solidity2" />
+      <kind value="PACKAGE" />
+      <package value="solidity2/cmd/trc/getBalance" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
+      <filePath value="$PROJECT_DIR$/cmd/trc/getBalance/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build solidity2/cmd/trc/test" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="blockChain" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="solidity2/cmd/trc/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/trc/test/test.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build solidity2/cmd/trc/transfer" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="blockChain" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="solidity2/cmd/trc/transfer" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/trc/transfer/main.go" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build solidity2/cmd/eth/solidity/deploy" />
+        <item itemvalue="Go Build.go build solidity2/cmd/trc/getBalance" />
+        <item itemvalue="Go Build.go build solidity2/cmd/trc/transfer" />
+        <item itemvalue="Go Build.go build solidity2/cmd/trc/test" />
+        <item itemvalue="Go Build.go build solidity2/cmd/btc/getBalance" />
       </list>
     </recent_temporary>
   </component>
@@ -113,13 +126,80 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/client/account.go</url>
+          <line>25</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/client/account.go</url>
+          <line>26</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/client/account.go</url>
+          <line>28</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/client/account.go</url>
+          <line>29</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/client/account.go</url>
+          <line>32</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/client/account.go</url>
+          <line>35</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/!j!f!jun/trx-sign-go@v1.0.3/grpcs/grpc.go</url>
+          <line>47</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/trc/getBalance/main.go</url>
+          <line>29</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/!j!f!jun/trx-sign-go@v1.0.3/sign/sign.go</url>
+          <line>31</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/!j!f!jun/trx-sign-go@v1.0.3/sign/sign.go</url>
+          <line>17</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/!j!f!jun/trx-sign-go@v1.0.3/sign/sign.go</url>
+          <line>19</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/!j!f!jun/trx-sign-go@v1.0.3/sign/sign.go</url>
+          <line>13</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="*(*&quot;github.com/fbsobreira/gotron-sdk/pkg/proto/api.ReturnResponseCode&quot;)(1374390265132)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
