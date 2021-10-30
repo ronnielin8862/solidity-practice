@@ -1,53 +1,42 @@
 package main
-//
-//import (
-//	"github.com/btcsuite/btcd/chaincfg"
-//
-//	"github.com/btcsuite/btcutil"
-//	"log"
-//)
-//
-//func main() {
-//	// create new client instance
-//	client, err := btcrpcclient.New(&btcrpcclient.ConnConfig{
-//		HTTPPostMode: true,
-//		DisableTLS:   true,
-//		Host:         "127.0.0.1:8332",
-//		User:         "rpcUsername",
-//		Pass:         "rpcPassword",
-//	}, nil)
-//	if err != nil {
-//		log.Fatalf("error creating new btc client: %v", err)
-//	}
-//
-//	// list accounts
-//	accounts, err := client.ListAccounts()
-//	if err != nil {
-//		log.Fatalf("error listing accounts: %v", err)
-//	}
-//	// iterate over accounts (map[string]btcutil.Amount) and write to stdout
-//	for label, amount := range accounts {
-//		log.Printf("%s: %s", label, amount)
-//	}
-//
-//	// prepare a sendMany transaction
-//	receiver1, err := btcutil.DecodeAddress("1someAddressThatIsActuallyReal", &chaincfg.MainNetParams)
-//	if err != nil {
-//		log.Fatalf("address receiver1 seems to be invalid: %v", err)
-//	}
-//	receiver2, err := btcutil.DecodeAddress("1anotherAddressThatsPrettyReal", &chaincfg.MainNetParams)
-//	if err != nil {
-//		log.Fatalf("address receiver2 seems to be invalid: %v", err)
-//	}
-//	receivers := map[btcutil.Address]btcutil.Amount{
-//		receiver1: 42,  // 42 satoshi
-//		receiver2: 100, // 100 satoshi
-//	}
-//
-//	// create and send the sendMany tx
-//	txSha, err := client.SendMany("some-account-label-from-which-to-send", receivers)
-//	if err != nil {
-//		log.Fatalf("error sendMany: %v", err)
-//	}
-//	log.Printf("sendMany completed! tx sha is: %s", txSha.String())
-//}
+
+import (
+	"fmt"
+	"solidity2/pkg/btc/getUTXO"
+	"solidity2/pkg/btc/omni"
+)
+
+type UTXOStruct struct {
+	TxID          string  `json:"TxID"`
+	Vout          uint32    `json:"Vout"`
+	Address       string  `json:"Address"`
+	Account       string  `json:"Account"`
+	RedeemScript  string  `json:"RedeemScript"`
+	Amount        float64 `json:"Amount"`
+	Confirmations int64     `json:"Confirmations"`
+	Spendable     bool    `json:"Spendable"`
+	ScriptPubKey string `json:"ScriptPubKey"`
+}
+
+func main() {
+	var utxo UTXOStruct
+
+	// create new client instance
+	client := omni.ConnectOmniNode()
+
+	UTXO, _ := getUTXO.GetUnspentByAddress("2N5adyFFHJ1SvY9ZKZ5fUrWy5YQvaVo5BLs",client.Client)
+
+	for _, v := range UTXO {
+		utxo.Address = v.Address
+		utxo.Account = v.Account
+		utxo.Amount = v.Amount
+		utxo.Confirmations = v.Confirmations
+		utxo.RedeemScript = v.RedeemScript
+		utxo.Spendable = v.Spendable
+		utxo.Vout = v.Vout
+	}
+
+	fmt.Println("UTXO 0-1 = " , utxo.Amount)
+
+	fmt.Printf("%+v\n", UTXO)
+}
