@@ -1,0 +1,25 @@
+drop table if exists block;
+create table block(
+                      id			   bigint not null AUTO_INCREMENT,
+                      Difficulty       text   ,
+                      ExtraData        text  ,
+                      GasLimit         text   ,
+                      GasUsed          text   ,
+                      Hash             text   ,
+                      LogsBloom        text   ,
+                      Miner            text   ,
+                      MixHash          text   ,
+                      Nonce            text   ,
+                      Number           text   ,
+                      ParentHash       text   ,
+                      ReceiptsRoot     text   ,
+                      Sha3Uncles       text   ,
+                      Size             text   ,
+                      StateRoot        text   ,
+                      Timestamp        datetime,
+                      TotalDifficulty  text   ,
+                      Transactions     text ,
+                      TransactionsRoot text  ,
+                      Uncles           text ,
+                      PRIMARY KEY (id) USING BTREE
+)

@@ -13,9 +13,9 @@ var (
 	aeskey = "yM82GwpkL2Bvxc3R"
 )
 
-func main (){
-	decryptStr , _ := Decrypt("bz7w/gJTai3UXS9NHqCuxA==")
-	fmt.Println("decryptStr = " , decryptStr)
+func main() {
+	decryptStr, _ := Decrypt("ldbdsqWcGwE0IxjIgrRXFajPiPCMSuNPzLoa7YtQXQs=")
+	fmt.Println("decryptStr = ", decryptStr)
 }
 
 func Decrypt(encryptCode string) (string, error) {

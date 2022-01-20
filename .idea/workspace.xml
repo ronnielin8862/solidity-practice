@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="299503a6-3f4a-4500-83ed-0df55a85c9b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/btc/getBlockHigh/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/btc/testGenKey/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/btc/transfer/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/dbPassDecrypt/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/btc/genPrivateKey/testGenKey.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/btc/getUTXO/getUTXO.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/btc/omni/client_enhancer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/btc/omni/nodeConnect.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/btc/omni/omnijson.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/btc/transfer/transfer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/eth/test_conn/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/block.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/struct.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/response/app_api.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/response/common.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/btc/getBalance/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/btc/getBalance/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/trc/genetateKeyAdnAddress/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/trc/generateKeyAdnAddress/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/dbPassDecrypt/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/dbPassDecrypt/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
@@ -49,14 +43,21 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/client/client.go" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/cmd/trc/getBalance/main.go" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/cmd/btc/getBalance/main.go" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/go/pkg/mod/github.com/fbsobreira/gotron-sdk@v0.0.0-20210810183618-c8cf2a5f46d5/pkg/common/base58.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/resource/struct.sql" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/cmd/eth/test_conn/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pkg/btc/transfer/transfer.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pkg/btc/omni/client_enhancer.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/local/go/src/runtime/proc.go" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/cmd/eth/sendTransaction/main.go" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/go/pkg/mod/github.com/!j!f!jun/trx-sign-go@v1.0.3/grpcs/grpc.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pkg/btc/omni/nodeConnect.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/cmd/btc/getBalance/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/cmd/btc/transfer/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/cmd/dbPassDecrypt/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/cmd/trc/getBalance/main.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/local/go/src/runtime/panic.go" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1zFmtEtnu6O6Hab3OC31e1nkrxV" />
   <component name="ProjectViewState">
@@ -69,14 +70,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.format.on.save.advertiser.fired" value="true" />
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cmd/btc" />
+    <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/cmd/eth" />
       <recent name="$PROJECT_DIR$/cmd/btc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -85,7 +90,7 @@
       <recent name="$PROJECT_DIR$/pkg/trx" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build solidity2/cmd/btc/transfer">
+  <component name="RunManager" selected="Go Build.go build solidity2/cmd/dbPassDecrypt">
     <configuration name="go build solidity2/cmd/btc/getBalance" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="blockChain" />
       <working_directory value="$PROJECT_DIR$" />
@@ -95,15 +100,6 @@
       <filePath value="$PROJECT_DIR$/cmd/btc/getBalance/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build solidity2/cmd/btc/testGenKey" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="blockChain" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="solidity2/cmd/btc/testGenKey" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/cmd/btc/testGenKey/main.go" />
-      <method v="2" />
-    </configuration>
     <configuration name="go build solidity2/cmd/btc/transfer" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="blockChain" />
       <working_directory value="$PROJECT_DIR$" />
@@ -111,6 +107,15 @@
       <package value="solidity2/cmd/btc/transfer" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/cmd/btc/transfer/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build solidity2/cmd/dbPassDecrypt" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="blockChain" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="solidity2/cmd/dbPassDecrypt" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/dbPassDecrypt/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build solidity2/cmd/test" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -154,11 +159,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build solidity2/cmd/dbPassDecrypt" />
         <item itemvalue="Go Build.go build solidity2/cmd/btc/transfer" />
         <item itemvalue="Go Build.go build solidity2/cmd/btc/getBalance" />
-        <item itemvalue="AWS Lambda.[Local] main" />
         <item itemvalue="Go Build.go build solidity2/cmd/test" />
-        <item itemvalue="Go Build.go build solidity2/cmd/btc/testGenKey" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +180,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
