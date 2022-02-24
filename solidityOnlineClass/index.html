@@ -1,0 +1,150 @@
+<html>
+
+
+<head>
+
+    <title>Greedy120</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <h1>Greedy120</h1>
+
+ <p>我的地址：<span id="my_address">請連接metamesk rinkeby後重新整理頁面</span></p>
+ <p>我的餘額：<span id="my_balance"></span></p>
+ <h3>遊戲規則：</h3>
+ <p>1.開始時合約設定倒數60分鐘、合約本金0.001 ether <br>
+  2.每投資一次增加倒數一分鐘、投資額0.001 ether <br>
+  3.倒數結束時獎金歸最後投資人</p>
+
+  <p>附註：請用Chrome瀏覽器，並搭配metamask使用，切換至rinkeby網路</p>
+    
+    <hr/>
+
+    <img src="http://5b0988e595225.cdn.sohucs.com/images/20190705/bf5ce3e8bfb946f48ee19d2b16bdd84c.jpeg">
+    
+ <p>目前合約總獎池：<span id="total_balance"></span></p>
+
+    <button id="investors" onclick="investors()">取得最新列表</button>
+ 
+    <p>投資人順序列表：<span id="join_address"></span></p>
+
+
+    <button id="invest" onclick="invest()">投注</button>
+
+    <p>(投注後請稍等挖礦到您的交易,約一分鐘)</p>
+
+    <br/>
+
+    <p><a href="https://rinkeby.etherscan.io/address/0xbe0b5e3420f5855c372819e8f761a074ce2eb333" target="_blank">參考鏈上合約狀態</a></p>
+
+    <p>遊戲剩餘時間:<span id="remainingTime"></span> 秒(要縮短時間請洽 Ronnie)</p>
+    <p>(展示用：時間設置比較長)</p>
+    <button id="getRemainingTime" onclick="getRemainingTime()">取得剩餘時間</button>
+
+    <h1 id="winnerOrLoser"></h1>
+
+    <p id="timeExpire">贏家才能領取獎勵唷</p>
+
+    <button id="getMoney" onclick="getMoney()">取得獎勵</button>
+
+
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.4/web3.min.js" crossorigin="anonymous"></script>
+
+    <script>
+  if (typeof web3 !== 'undefined') {
+    web3 = new Web3(web3.currentProvider);
+  } else {
+    web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.etherscan.io/address/0xbe0b5e3420f5855c372819e8f761a074ce2eb333"));
+  }
+
+  var myContract;
+  var coinbase;
+
+  async function printPostsToConsole() {
+
+   web3.eth.requestAccounts();
+
+   //取得帳號
+   coinbase = await web3.eth.getCoinbase();
+
+
+   // //取得帳號餘額
+   var balance = await web3.eth.getBalance(coinbase);
+   $("#my_address").text(coinbase);
+   $("#my_balance").text(web3.utils.fromWei(balance));  //wei 轉換成 ether 
+
+   console.log("coinbase = " +coinbase);
+
+   var contract_address = "0xbe0B5e3420F5855C372819E8F761a074cE2EB333";
+   var contract_abi = [ { "constant": true, "inputs": [], "name": "remainingSecond", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "expireTime", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "uint256" } ], "name": "investors", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "secondTime", "type": "uint256" } ], "name": "setExpireTime", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "getMoneyByLaster", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "contractBalance", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getAllInvestors", "outputs": [ { "name": "", "type": "address[]" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "invest", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "inputs": [], "payable": true, "stateMutability": "payable", "type": "constructor" } ];
+
+   myContract = new web3.eth.Contract(contract_abi, contract_address);
+
+   //取得合約餘額
+   var balance_contract = await web3.eth.getBalance(contract_address);
+   $("#total_balance").text(web3.utils.fromWei(balance_contract));
+  
+  };
+
+  printPostsToConsole();
+
+async function getRemainingTime(){
+
+   const receipt = await myContract.methods.remainingSecond().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
+   
+   $("#remainingTime").text(receipt);
+  if (receipt == 0) {
+  	winOrLose();
+  	}
+  }
+
+ async function winOrLose(){
+
+	var investorsString =  await investors();
+    var investorList = String(investorsString).split(',');
+    var len = investorList.length;
+    var lastor = investorList[len - 1];
+
+    console.log("lastor = " +lastor);
+    console.log("coinbase = " + coinbase);
+    if (lastor.toLowerCase() == coinbase.toLowerCase()){
+    	$("#winnerOrLoser").text("YOU ARE WINNER, 請按領取獎勵，收割韭菜吧");
+    }else{
+    	$("#winnerOrLoser").text("YOU ARE LOSER，你被收割了");
+    }
+  }
+
+
+  async function getMoney(){
+  	const receipt = await myContract.methods.remainingSecond().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
+  	if (receipt != 0 ){
+  		$("#timeExpire").text("你還不是贏家，請等待時間歸零")
+  	}else {
+  		winOrLose();
+  		myContract.methods.getMoneyByLaster().send({from: coinbase});
+  	}
+  }
+
+
+  function invest(){
+   myContract.methods.invest().send({from: coinbase, value: 1000000000000000})
+   .then(function(receipt){
+    alert("投資交易被挖到了");
+    location.reload();
+   });
+  }
+
+   async function investors(){
+   const receipt = await myContract.methods.getAllInvestors().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})
+   $("#join_address").text(receipt);
+     return receipt;
+
+  }
+
+    </script>
+</body>
+
+</html>
